@@ -20,6 +20,8 @@ public class UserController {
 
     @GetMapping("/{userId}")
     public UserDTO getUser(@PathVariable Long userId) {
+        System.out.println("controller ----------");
+
         return userService.getUser(userId);
     }
 

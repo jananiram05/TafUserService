@@ -40,7 +40,9 @@ public class UserServiceImpl implements UserService {
     @Override
     public UserDTO getUser(Long userId) {
         String url = datastoreServiceUrl + "/" + userId;
+
         try {
+            System.out.println(url+"getting userid"+userId);
             return restTemplate.getForObject(url, UserDTO.class);
         } catch (HttpClientErrorException e) {
             throw new RuntimeException("User not found: " + e.getMessage());
